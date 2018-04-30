@@ -126,7 +126,6 @@ public class RestUploadController {
 
     }
 
-    // 3.1.3 maps html form to a Model
     @PostMapping("/api/upload/multi/model")
     public ResponseEntity<?> multiUploadFileModel(@ModelAttribute UploadModel model) {
 
@@ -167,7 +166,7 @@ public class RestUploadController {
         for (MultipartFile file : files) {
 
             if (file.isEmpty()) {
-                continue; //next pls
+                continue; 
             }
 
             byte[] bytes = file.getBytes();
@@ -185,17 +184,14 @@ public class RestUploadController {
     public Map<String, Map<String, String>> getDataFromImages(String path) throws Exception {
     	Map<String, Map<String, String>> map  = new HashMap<>();
         BytePointer outText;
-        // Open input image with leptonica library
         PIX image = pixRead(path);
         tessBaseAPI.SetImage(image);
-        // Get OCR result
         outText = tessBaseAPI.GetUTF8Text();
         String string = outText.getString();
         System.out.println("OCR output:\n" + string);
     	Map<String, String> tempmap  = new HashMap<>();
     	tempmap.put("content", string);
         map.put("data", tempmap);
-        // Destroy used object and release memory
         tessBaseAPI.End();
         outText.deallocate();
         pixDestroy(image);

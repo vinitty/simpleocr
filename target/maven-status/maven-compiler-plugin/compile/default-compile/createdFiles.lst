@@ -1,0 +1,7 @@
+com/sample/ocr/Greeting.class
+com/sample/ocr/SampleOcrApplication.class
+com/sample/ocr/CustomError.class
+com/sample/ocr/RestGlobalExceptionHandler.class
+com/sample/ocr/UploadModel.class
+com/sample/ocr/RestUploadController.class
+com/sample/ocr/IndexController.class
