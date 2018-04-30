@@ -19,7 +19,7 @@ import org.bytedeco.javacpp.lept.PIX;
 import org.bytedeco.javacpp.tesseract.TessBaseAPI;
 import org.junit.Test;
 
-public class BasicTesseractExampleTest {
+public class SimpleOcrTest {
     
     @Test
     public void givenTessBaseApi_whenImageOcrd_thenTextDisplayed() throws Exception {
